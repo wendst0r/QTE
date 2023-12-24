@@ -78,7 +78,7 @@ class MainActivity : ComponentActivity() {
 
 
 
-    override fun onStart() {
+    override fun onnStart() {
         super.onStart()
         MapKitFactory.getInstance().onStart()
         mapView.onStart()
