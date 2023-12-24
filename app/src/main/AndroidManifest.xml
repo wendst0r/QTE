@@ -13,9 +13,19 @@
         android:theme="@style/Theme.QTE"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".OrderInformationActivity"
             android:exported="true"
-            android:label="@string/app_name">
+            android:label="@string/title_activity_order_information"
+            android:theme="@style/Theme.QTE">
+        </activity>
+        <activity
+            android:name=".OrderListActivity"
+            android:exported="true"
+            android:label="@string/title_activity_order_list"
+            android:theme="@style/Theme.QTE.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
