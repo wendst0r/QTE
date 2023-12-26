@@ -13,11 +13,21 @@
         android:theme="@style/Theme.QTE"
         tools:targetApi="31">
         <activity
+            android:name=".QR"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.yandex.MapKitFactory.API_KEY"
+            android:value="cb379ab9-c564-41ca-bd72-3e4e63a2a243" />
+
+        <activity
             android:name=".OrderInformationActivity"
             android:exported="true"
             android:label="@string/title_activity_order_information"
-            android:theme="@style/Theme.QTE">
-        </activity>
+            android:theme="@style/Theme.QTE" />
         <activity
             android:name=".OrderListActivity"
             android:exported="true"

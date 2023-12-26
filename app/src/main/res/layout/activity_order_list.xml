@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".OrderList">
+    tools:context=".OrderListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcView"
