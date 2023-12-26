@@ -64,39 +64,49 @@ class MainActivity : ComponentActivity() {
         changeStatus = findViewById(R.id.changeStatus)
         orderInfo = findViewById(R.id.orderInfo)
 
-        // Обработчик нажатия на кнопку изменения статуса заказа и надписи на кнопке в зависимости от статуса заказа
-        changeStatus.setOnClickListener {
+        }
+    // Обработчик нажатия на кнопку изменения статуса заказа и надписи на кнопке в зависимости от статуса заказа
+    fun changeStatusOnclick(view: View) {
             when (orders[orderIDD].status) {
                 OrderStatus.ord_await -> {
                     orders[orderIDD].status = OrderStatus.way_pickup_point
                     changeStatus.text = "Прибыл в пункт выдачи"
                 }
+
                 OrderStatus.way_pickup_point -> {
                     orders[orderIDD].status = OrderStatus.pickup_point
                     changeStatus.text = "Подтвердить получение заказа"
                 }
+
                 OrderStatus.pickup_point -> {
                     val intent = Intent(this, QR::class.java)
                     startActivity(intent)
                     changeStatus.text = "Прибыл к клиенту"
                 }
+
                 OrderStatus.way_to_cliet -> {
                     orders[orderIDD].status = OrderStatus.on_place
                     changeStatus.text = "Подтвердить передачу заказа"
                 }
+
                 OrderStatus.on_place -> {
                     val intent = Intent(this, QR::class.java)
                     startActivity(intent)
                     orderInfo.visibility = View.INVISIBLE
                     changeStatus.text = "Выбрать следующий заказ"
                 }
+
                 OrderStatus.ord_delivered -> {
                     val intent = Intent(this, OrderListActivity::class.java)
                     startActivity(intent)
                 }
+
                 else -> {}
             }
         }
+
+    fun createView(): View {
+        return View(this)
     }
 
     // Метод для перехода к странице профиля

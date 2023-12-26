@@ -2,7 +2,16 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="MainActivityTest">
+        <State />
+      </entry>
       <entry key="app">
+        <State />
+      </entry>
+      <entry key="before click status - ord_await, after click status - way_to_pickupoint()">
+        <State />
+      </entry>
+      <entry key="changeStatusTest1()">
         <State />
       </entry>
     </value>

@@ -4,18 +4,9 @@ plugins {
     id("org.jetbrains.dokka") version "1.9.10"
 }
 
-java{
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-}
 android {
     namespace = "com.example.qte"
     compileSdk = 34
-
-    testOptions {
-        unitTests {
-        }
-    }
 
     defaultConfig {
         applicationId = "com.example.qte"
@@ -27,7 +18,6 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-
     }
 
     buildTypes {
@@ -79,11 +69,11 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
-    implementation("androidx.test:core-ktx:1.5.0")
-    implementation("org.testng:testng:6.9.6")
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation("com.google.truth:truth:1.0.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
@@ -91,8 +81,9 @@ dependencies {
     implementation ("com.yandex.android:maps.mobile:4.4.0-lite")
     implementation ("com.google.android.gms:play-services-location:18.0.0")
     implementation ("androidx.lifecycle:lifecycle-extensions:2.0.0")
-    androidTestImplementation ("org.junit.jupiter:junit-jupiter:5.8.2")
-    androidTestImplementation ("org.mockito: mockito-core: 4.0.0")
-    androidTestImplementation ("org.mockito.kotlin: mockito-kotlin: 4.0.0")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation ("androidx.test.ext:junit:1.1.3")
+
+    androidTestImplementation("org.mockito:mockito-core:3.12.4")
 }
 
